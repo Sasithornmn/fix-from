@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="/static/style-login&register.css" />
+  </head>
+  <body>
+    <div
+      class="container d-flex justify-content-center align-items-center min-vh-100"
+    >
+      <div class="card p-4">
+        <h1 class="text-center mb-4">Register</h1>
+        <form action="#" method="post">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input
+              id="username"
+              type="text"
+              class="form-control"
+              name="username"
+              placeholder="ชื่อผู้ใช้"
+              required
+            />
+          </div>
+          <!-- required -->
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input
+              id="email"
+              type="text"
+              class="form-control"
+              name="email"
+              placeholder="อีเมล"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input
+              id="password"
+              type="password"
+              class="form-control"
+              name="password"
+              placeholder="รหัสผ่าน"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="confirm_password">Confirm Password</label>
+            <input
+              id="confirm_password"
+              type="password"
+              class="form-control"
+              name="confirm_password"
+              placeholder="ยืนยันรหัสผ่าน"
+              required
+            />
+          </div>
+
+          <button
+            type="submit"
+            class="btn btn-primary btn-block"
+            onclick="saveinfo()"
+          >
+            Register
+          </button>
+        </form>
+
+        <!-- {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="alert alert-danger mt-3">
+          {%for message in messages%} {{ message}} {%endfor%}
+        </div>
+        {% endif %} {% endwith %} -->
+
+        <p class="mt-3 text-center">
+          มีบัญชีอยู่แล้วใช่ไหม?
+          <!-- Already have an account? -->
+          <a href="/login">คลิกที่นี่</a>
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+      function saveinfo() {
+        if (validate()) {
+          Swal.fire({
+            icon: "success",
+            title: "Success",
+          }).then(() => {
+            window.location.href = "/login";
+          });
+        }
+      }
+
+      function validate() {
+        var pass = true;
+        var username = document.querySelector("#username");
+        var email = document.querySelector("#email");
+        var password = document.querySelector("#password");
+        var confirm_password = document.querySelector("#confirm_password");
+
+        if (username.value.length <= 0) {
+          pass = false;
+          Swal.fire({
+            icon: "success",
+            title: "username",
+            text: "Please insert username",
+          });
+          username.style.border = "1px solid red";
+        } else if (email.value.length <= 0) {
+          pass = false;
+          Swal.fire({
+            icon: "error",
+            title: "name",
+            text: "Please insert email",
+          });
+          email.style.border = "1px solid red";
+        } else if (password.value.length <= 0) {
+          pass = false;
+          Swal.fire({
+            icon: "error",
+            title: "email",
+            text: "Please insert password",
+          });
+          password.style.border = "1px solid red";
+        } else if (confirm_password.value.length <= 0) {
+          pass = false;
+          Swal.fire({
+            icon: "error",
+            title: "phone",
+            text: "Please insert confirm password",
+          });
+          confirm_password.style.border = "1px solid red";
+        } else if (
+          email.value.indexOf("@") < 0 ||
+          mail.value.indexOf(".") < 0
+        ) {
+          pass = false;
+          Swal.fire({
+            icon: "error",
+            title: "email",
+            text: "Format email wrong. without @ or .",
+          });
+          email.style.border = "1px solid red";
+        }
+
+        return pass;
+      }
+
+      function clearBorder(e) {
+        document.querySelector(`#${e.id}`).style.border = "none";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Are You Stroke?</title>
+    <link rel="stylesheet" href="/static/style-form.css" />
+    <script src="/static/script-form.js"></script>
+  </head>
+  <body>
+    <div class="form-container">
+      <div class="card">
+        <div class="card-img">
+          <h2 class="card-heading">
+            Are You Stroke?
+            <small>Let's start checking.</small>
+          </h2>
+        </div>
+        
+        <form action="{{url_for('result')}}" class="card-form" method="post">
+          <div class="input gender">
+            <label class="label">เพศ</label>
+            
+            <select class="dropdown" id="gender" name="gender" required>
+              <option value="">เลือกเพศของคุณ</option>
+              <option value="0">ชาย</option>
+              <option value="1">หญิง</option>
+            </select>
+          
+          </div>
+
+          <div class="input age">
+            <label class="label">คุณอายุกี่ปี ?</label>
+            <input
+              class="ans"
+              type="text"
+              id="age"
+              name="age"
+              placeholder="อายุของคุณ"
+              required
+            />
+          </div>
+
+          <div class="input Hypertension">
+            <label class="label">คุณเป็นความดันโลหิตสูงหรือไม่ ?</label>
+            <select class="dropdown" id="hypertension" name="hypertension"required>
+              <option value="">เลือกคำตอบของคุณ</option>
+              <option value="0">ไม่ ฉันไม่ได้เป็นความดันโลหิตสูง</option>
+              <option value="1">ใช่ ฉันเป็นความดันโลหิตสูง</option>
+            </select>
+            
+
+          <div class="input Heart disease">
+            <label class="label">คุณเป็นโรคหัวใจหรือไม่ ?</label>
+            <select class="dropdown" id="heart_disease" name="heart_disease"required>
+              <option value="">เลือกคำตอบของคุณ</option>
+              <option value="0">ไม่ ฉันไม่ได้เป็นโรคหัวใจ</option>
+              <option value="1">ใช่ ฉันเป็นโรคหัวใจ</option>
+            </select>
+
+          <div class="input Marital status">
+            <label class="label">คุณแต่งงานแล้วหรือไม่ ?</label>
+            <select class="dropdown" id="ever_married" name="ever_married" required>
+              <option value="">เลือกคำตอบของคุณ</option>
+              <option value="0">ไม่ ฉันยังไม่ได้แต่งงาน</option>
+              <option value="1">ใช่ ฉันแต่งงานแล้ว</option>
+            </select>
+          </div>
+
+          <div class="input Type of work">
+            <label class="label">อาชีพของคุณ</label>
+            <select class="dropdown" id="work_type" name="work_type" required>
+              <option value="">เลือกคำตอบของคุณ</option>
+              <option value="0">ฉันไม่เคยทำงาน</option>
+              <option value="1">ฉันทำธรุกิจส่วนตัว</option>
+              <option value="2">ฉันทำงานรับจ้างทั่วไป</option>
+            </select>
+          </div>
+
+          <div class="input Type of residence">
+            <label class="label">ที่อยู่อาศัยของคุณ</label>
+            <select class="dropdown" id="Residence_type" name="Residence_type" required>
+              <option value="">เลือกคำตอบของคุณ</option>
+              <option value="0">ฉันอาศัยอยู่ในชนบท</option>
+              <option value="1">ฉันอาศัยอยู่ในเมือง</option>
+            </select>
+          </div>
+
+          <div class="input Average glucose level">
+            <label class="label">ระดับน้ำตาลในเลือดของคุณคือเท่าใด ?</label>
+            <input
+              class="ans"
+              type="text"
+              id="avg_glucose_level"
+              name="avg_glucose_level"
+              placeholder="ระดับน้ำตาลในเลือด"
+              required
+            />
+          </div>
+
+          <div class="input BMI">
+            <label class="label">ค่า BMI ของคุณคือเท่าใด ?</label>
+            <input
+              class="ans"
+              type="text"
+              id="bmi"
+              name="bmi"
+              placeholder="ค่า BMI"
+              required
+            />
+            
+          </div>
+
+          <div class="input Smoking status">
+            <label class="label">คุณสูบบุหรี่หรือไม่ ?</label>
+            <select class="dropdown" id="smoking_status" name="smoking_status" required>
+              <option value="">เลือกคำตอบของคุณ</option>
+              <option value="0">ไม่ ฉันไม่สูบบุหรี่</option>
+              <option value="1">ใช่ ฉันสูบบุหรี่</option>
+            </select>
+          </div>
+
+          <button type="submit" class="button-nav" value="submit">
+            Check Now!
+          </button>
+          <!-- <a href="" class="button-nav">Check Now!</a> -->
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
