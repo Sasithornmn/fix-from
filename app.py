@@ -116,7 +116,7 @@ def result():
     residence_type = int(request.form['Residence_type'])
     avg_glucose = float(request.form['avg_glucose_level'])
     bmi = float(request.form['bmi'])
-    smoking_status = int(request.form['smoking_status'])
+    smoking_status = int(request.form['smoking_status']) 
 
     x=np.array([gender,age,hypertension,heart_disease,ever_married,work_type,residence_type,
                     avg_glucose,bmi,smoking_status]).reshape(1,-1)
